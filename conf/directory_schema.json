@@ -1,0 +1,117 @@
+{
+    "Accounts": {
+        "collection": "accounts",
+        "schema": {
+            "nom": "String",
+            "prenom": "String",
+            "titre": "String",
+            "sexe": "String",
+            "login": {"type": "String", "unique": "true"},
+            "password": "String",
+            "email": "String",
+            "telephone": "String",
+            "adresse1": "String",
+            "adresse2": "String",
+            "code_postal": "String",
+            "ville": "String",
+            "actif": "Boolean",
+            "notes": "String",
+            "role": {
+              "type": "ObjectId",
+              "ref": "Role"
+            },
+            "functionalities": [{
+              "type": "ObjectId",
+              "ref": "Functionalities"
+            }]
+        }
+
+    },
+    "AccountId": {
+        "collection": "accounts",
+        "schema": {
+            "_id": "ObjectId",
+            "nom": "String",
+            "prenom": "String",
+            "titre": "String",
+            "sexe": "String",
+            "login": {"type": "String", "unique": "true"},
+            "password": "String",
+            "email": "String",
+            "telephone": "String",
+            "adresse1": "String",
+            "adresse2": "String",
+            "code_postal": "String",
+            "ville": "String",
+            "actif": "Boolean",
+            "notes": "String",
+            "role": {
+              "type": "ObjectId",
+              "ref": "Role"
+            }
+        }
+    },
+    "Role": {
+      "collection": "role",
+      "schema": {
+        "_id": "ObjectId",
+        "code": "String",
+        "libelle": "String"
+      }
+    },
+    "LogsAccounts": {
+        "collection": "logs",
+        "schema": {
+            "date": "String",
+            "event": "String",
+            "message": "String",
+            "ip": "String",
+            "session": "String",
+            "user_id": {
+                "type": "ObjectId",
+                "ref": "Accounts"
+            }
+
+        }
+    },
+    "Logs": {
+      "collection": "logs",
+      "schema": {
+        "date": "String",
+        "event": "String",
+        "message": "String",
+        "ip": "String",
+        "session": "String"
+      }
+    },
+    "Countries": {
+      "collection": "countries",
+      "schema": {
+        "_id": "ObjectId",
+        "name": "String",
+        "code": "String"
+      }
+    },
+    "Functionalities": {
+        "collection": "functionalities",
+        "schema": {
+            "_id": "ObjectId",
+            "title": "String",
+            "color": "String",
+            "iconfs": "String"
+        }
+    },
+    "Enterprises": {
+        "collection": "enterprises",
+        "schema": {
+            "_id": "ObjectId",
+            "raison_sociale": "String",
+            "adresse1": "String",
+            "adresse2": "String",
+            "code_postal": "String",
+            "ville": "String",
+            "siret": "String",
+            "codeNAF": "String"
+        }
+    }
+}

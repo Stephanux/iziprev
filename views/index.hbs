@@ -1,0 +1,337 @@
+{{#content "head"}}
+    {{> head}}
+{{/content}}
+{{#content "nav"}}
+    {{> nav}}
+{{/content}}
+{{#content "page"}}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                {{translation.WELCOME_MSG}} {{translation.SOFT_NAME}}
+            </h1>
+            <br/>
+            <h2>{{translation.TITLE_MSG}}</h2>
+
+            <h2 class="center-block">
+                {{translation.DASHBOARD_TITLE}}
+            </h2>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-home"></i> Accueil</a></li>
+            </ol>
+        </section>
+
+        <!--section>
+          <img src="img/logo-otf-6-1_280px.png" class="img-responsive" alt="logo OTF²">
+        </section-->
+        <!-- Main content -->
+        <section class="content">
+            <!-- ================= widgets accueil ======================= -->
+            <!-- First row of dashboard -->
+
+            <div class="row">
+                {{#each result.functionalities}}
+                    {{#compare @index '3' operator='<'}}
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <a href="#">
+                                <div class="info-box bg-{{this.color}}"
+                                     onmouseover="activateBoxOver(this, '{{this.color}}');"
+                                     onmouseout="deactivateBoxOver(this, '{{this.color}}');">
+                                    <span class="info-box-icon"><i class="fa {{this.iconfs}} fa-1x"
+                                                                   aria-hidden="true"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">{{{this.title}}}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {{/compare}}
+                {{/each}}
+            </div>
+            <div class="row">
+                {{#each result.functionalities}}
+                    {{#compare @index '2' operator='>'}}
+                        {{#compare @index '6' operator='<'}}
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <a href="#">
+                                    <div class="info-box bg-{{this.color}}"
+                                         onmouseover="activateBoxOver(this, '{{this.color}}');"
+                                         onmouseout="deactivateBoxOver(this, '{{this.color}}');">
+                                        <span class="info-box-icon"><i class="fa {{this.iconfs}} fa-1x"
+                                                                       aria-hidden="true"></i></span>
+                                        <div class="info-box-content">
+                                            <span class="info-box-text">{{{this.title}}}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {{/compare}}
+                    {{/compare}}
+                {{/each}}
+            </div>
+
+            <div class="row">
+                {{#each result.functionalities}}
+                    {{#compare @index '5' operator='>'}}
+                        {{#compare @index '9' operator='<'}}
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <a href="#">
+                                <div class="info-box bg-{{this.color}}"
+                                     onmouseover="activateBoxOver(this, '{{this.color}}');"
+                                     onmouseout="deactivateBoxOver(this, '{{this.color}}');">
+                                    <span class="info-box-icon"><i class="fa {{this.iconfs}} fa-1x"
+                                                                   aria-hidden="true"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">{{{this.title}}}</span>
+                                    </div>
+                                </div>
+                        </div>
+                        {{/compare}}
+                    {{/compare}}
+                {{/each}}
+            </div>
+
+            <div class="row">
+                {{#each result.functionalities}}
+                    {{#compare @index '8' operator='>'}}
+                        {{#compare @index '12' operator='<'}}
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <a href="#">
+                                    <div class="info-box bg-{{this.color}}"
+                                         onmouseover="activateBoxOver(this, '{{this.color}}');"
+                                         onmouseout="deactivateBoxOver(this, '{{this.color}}');">
+                                        <span class="info-box-icon"><i class="fa {{this.iconfs}} fa-1x"
+                                                                       aria-hidden="true"></i></span>
+                                        <div class="info-box-content">
+                                            <span class="info-box-text">{{{this.title}}}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {{/compare}}
+                    {{/compare}}
+                {{/each}}
+            </div>
+            <div class="row">
+                {{#each result.functionalities}}
+                    {{#compare @index '11' operator='>'}}
+                        {{#compare @index '15' operator='<'}}
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <a href="#">
+                                    <div class="info-box bg-{{this.color}}"
+                                         onmouseover="activateBoxOver(this, '{{this.color}}');"
+                                         onmouseout="deactivateBoxOver(this, '{{this.color}}');">
+                                            <span class="info-box-icon"><i class="fa {{this.iconfs}} fa-1x"
+                                                                           aria-hidden="true"></i></span>
+                                        <div class="info-box-content">
+                                            <span class="info-box-text">{{{this.title}}}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {{/compare}}
+                    {{/compare}}
+                {{/each}}
+            </div>
+
+            <!--div class="row">
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <a href="#">
+                <div class="info-box bg-red" onmouseover="activateBoxOver(this, 'red');" onmouseout="deactivateBoxOver(this, 'red');">
+                  <span class="info-box-icon"><i class="fa fa-fire-extinguisher  fa-1x" aria-hidden="true"></i></span>
+                  <div class="info-box-content">
+                    <span class="info-box-text">Registre de sécurité<br> incendie</span>
+                  </div>
+                </div>
+                </a>
+              </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#">
+                    <div class="info-box bg-red" onmouseover="activateBoxOver(this, 'red');" onmouseout="deactivateBoxOver(this, 'red');">
+                        <span class="info-box-icon"><i class="fa fa-medkit fa-1x" aria-hidden="true"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">DOCUMENTS UNIQUES <br/>D'éVALUATION <br/>DES RISQUES <br/>PROFESSIONNELS</span>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                  <a href="#">
+                  <div class="info-box bg-green" onmouseover="activateBoxOver(this, 'green');" onmouseout="deactivateBoxOver(this, 'green');">
+                  <span class="info-box-icon"><i class="fa fa-book"></i></span>
+                  <div class="info-box-content">
+                    <span class="info-box-text">REGISTRE DU CSHCT</span>
+                  </div>
+                </div>
+                  </a>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#">
+                    <div class="info-box bg-navy" onmouseover="activateBoxOver(this, 'navy');" onmouseout="deactivateBoxOver(this, 'navy');">
+                        <span class="info-box-icon"><i class="fa fa-check-square fa-1x" aria-hidden="true"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">REGISTRE DES VéRIFICATIONS <br/>électrique, levage, <br/>pression, véhicules, <br/>ascenseur, etc.</span>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#">
+                    <div class="info-box bg-navy" onmouseover="activateBoxOver(this, 'navy');" onmouseout="deactivateBoxOver(this, 'navy');">
+                        <span class="info-box-icon"><i class="fa fa-wrench fa-1x" aria-hidden="true"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">TRAVAUX RéALISéS PAR OU DANS UNE <br/>ENTREPRISE EXTéRIEURE</span>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#">
+                    <div class="info-box bg-green" onmouseover="activateBoxOver(this, 'green');" onmouseout="deactivateBoxOver(this, 'green');">
+                        <span class="info-box-icon"><i class="fa fa-book"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">COMPTE PROFESSIONNEL<br/>DE PRéVENTION (C2P)</span>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#">
+                    <div class="info-box bg-navy" onmouseover="activateBoxOver(this, 'navy');" onmouseout="deactivateBoxOver(this, 'navy');">
+                        <span class="info-box-icon"><i class="fa fa-exclamation-triangle fa-1x" aria-hidden="true"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">DISPOSITION RELATIVE<br/>A L'UTILISATION <br>DE CERTAINS PRODUITS<br/>Chimiques, biologiques</span>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#">
+                    <div class="info-box bg-navy" onmouseover="activateBoxOver(this, 'navy');" onmouseout="deactivateBoxOver(this, 'navy');">
+                        <span class="info-box-icon"><i class="fa fa-exclamation-circle fa-1x" aria-hidden="true"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">ORGANISATION DYNAMIQUE<br/>Alerte, main courante,<br/> mémo, planning</span>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#">
+                    <div class="info-box bg-green" onmouseover="activateBoxOver(this, 'green');" onmouseout="deactivateBoxOver(this, 'green');"s>
+                        <span class="info-box-icon"><i class="fa fa-book"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">SUIVI DES FORMATIONS<br/>HABILITATIONS<br/>AUTORISATIONS</span>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#">
+                    <div class="info-box bg-navy" onmouseover="activateBoxOver(this, 'navy');" onmouseout="deactivateBoxOver(this, 'navy');">
+                        <span class="info-box-icon"><i class="fa fa-pie-chart fa-1x" aria-hidden="true"></i></span>
+                        <div class="info-box-content">
+                           <span class="info-box-text">STATISTIQUES<br>Pour certification</span>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#">
+                    <div class="info-box bg-navy" onmouseover="activateBoxOver(this, 'navy');" onmouseout="deactivateBoxOver(this, 'navy');">
+                        <span class="info-box-icon"><i class="fa fa-hand-o-right fa-1x" aria-hidden="true"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">ORGANISMES DE FORMATION</span>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#" onmouseover="this.borderColor='red'";>
+                    <div class="info-box bg-green" onmouseover="activateBoxOver(this, 'green');" onmouseout="deactivateBoxOver(this, 'green');">
+                        <span class="info-box-icon"><i class="fa fa-book"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">FICHE DE POSTE, <br/>PROTOCOLE DE SéCURITé,<br/>PROCéDURES DE TRAVAIL<br/>MODE OPéRATOIRE</span>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#">
+                        <div class="info-box bg-olive" onmouseover="activateBoxOver(this, 'olive');" onmouseout="deactivateBoxOver(this, 'olive');">
+                            <span class="info-box-icon"><i class="fa fa-users fa-1x" aria-hidden="true"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">REGISTRE UNIQUE<br/>DU PERSONNEL<br>ET STAGIAIRES</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#">
+                        <div class="info-box bg-olive" onmouseover="activateBoxOver(this, 'olive');" onmouseout="deactivateBoxOver(this, 'olive');">
+                            <span class="info-box-icon"><i class="fa fa-gavel" aria-hidden="true"></i></span>
+                            <div class="info-box-content">
+                               <span class="info-box-text">RèGLEMENT INTéRIEUR</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <a href="#" onmouseover="this.borderColor='red'";>
+                       <div class="info-box bg-green" onmouseover="activateBoxOver(this, 'green');" onmouseout="deactivateBoxOver(this, 'green');">
+                            <span class="info-box-icon"><i class="fa fa-book"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">REGISTRE DES DECLARATIONS<br/>DES A.T. / M.P.<br/> FORMULAIRE DE DECLARATIONS<br/> DES A.T./M.P.</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div-->
+            <!-- Default box -->
+            <!-- <div class="box">
+            <div class="box-header with-border">
+              <h3>{{title}}</h3>
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <h5>
+                  {{#compare state 'connected' operator="=="}}
+              <p class="text-success">CONNECTED</p>
+              <p class="text-success">Bienvenue {{user}}, {{message}}</p>
+                  {{/compare}}
+                {{#compare state 'not_connected' operator="=="}}
+              <p class="text-danger">NOT CONNECTED</p>
+                  {{/compare}}
+                {{#compare state 'logout' operator="=="}}
+                      <p class="text-danger">Logout</p>
+
+                      <p class="text-danger">{{message}}</p>
+                  {{/compare}}
+              </h5>
+            </div>
+          </div>-->
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+
+{{/content}}
+{{#content "footer"}}
+    {{> footer}}
+{{/content}}
