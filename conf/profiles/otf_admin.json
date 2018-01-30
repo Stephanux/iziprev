@@ -310,6 +310,30 @@
         "data_model": "Accounts",
         "redirect": true,
         "redirect_action": "gestiondroitsusers"
+    },
+    "GET/rh_registreuniquedupersonneletstagiaires" : {
+        "module": "finder",
+        "methode": "list",
+        "screen": "form_registre_unique_personnel",
+        "auth": true,
+        "data_model": "RegistreUniqueDuPersonnel",
+        "params_names": []
+    },
+    "GET/json/rh_registreuniquedupersonneletstagiaires" : {
+        "module": "finder",
+        "methode": "list",
+        "screen": "form_registre_unique_personnel",
+        "auth": true,
+        "data_model": "RegistreUniqueDuPersonnel",
+        "return_type": "application/json"
+    },
+    "GET/fiche_saisie_registre_personnel" : {
+        "module": "finder",
+        "methode": "one",
+        "screen": "fiche_saisie_registre_personnel",
+        "auth": true,
+        "data_model": "RegistreUniqueDuPersonnel",
+        "params_names": ["_id"]
     }
 
 }
