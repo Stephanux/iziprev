@@ -8,7 +8,11 @@
     <script>
         //<![CDATA[
         $(document).ready(function(){
-            $("[data-mask]").inputmask();
+            $.fn.datepicker.defaults.format = "dd/mm/yyyy";
+            $('.datepicker').datepicker({
+                language: 'fr'
+            });
+
         });
     </script>
     <!-- Content Wrapper. Contains page content -->
@@ -68,7 +72,12 @@
                                 </div>
                                 <label for="date_naissance" class="col-sm-1 control-label">Date Naissance </label>
                                 <div class="col-sm-2">
-                                    <input id="date_naissance" class="form-control" type="text" placeholder="Date naissance" name="date_naissance" value="{{#if result}}{{result.date_naissance}}{{/if}}" title="Ce champs est requis" required="required"/>
+                                    <div class="input-group date" data-provide="datepicker">
+                                        <input id="date_naissance" type="text" class="form-control datepicker" placeholder="Date naissance" name="date_naissance"  value="{{#if result}}{{result.date_naissance}}{{/if}}" title="Ce champs est requis" required="required">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -77,10 +86,20 @@
                                     <input class="form-control" placeholder="Emploi qualification" type="text" name="emploi_qualification" title="Emploi qualification" value="{{#if result}}{{result.emploi_qualification}}{{/if}}" required="required" autofocus/>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input class="form-control" type="text" placeholder="Date entrée" name="date_entree" value="{{#if result}}{{result.date_entree}}{{/if}}" title="date_entree" required="required"/>
+                                    <div class="input-group date" data-provide="datepicker">
+                                        <input id="date_entree" type="text" class="datepicker form-control" placeholder="Date entrée" name="date_entree"  value="{{#if result}}{{result.date_entree}}{{/if}}" title="Ce champs est requis" required="required">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-sm-2">
-                                    <input class="form-control" type="text" placeholder="Date sortie" name="date_sortie" value="{{#if result}}{{result.date_sortie}}{{/if}}" title="date_sortie" required="required"/>
+                                    <div class="input-group date" data-provide="datepicker">
+                                        <input id="date_sortie" type="text" class="datepicker form-control" placeholder="Date sortie" name="date_sortie"  value="{{#if result}}{{result.date_sortie}}{{/if}}" title="Ce champs est requis" required="required">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
