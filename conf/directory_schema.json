@@ -25,7 +25,6 @@
               "ref": "Functionalities"
             }]
         }
-
     },
     "AccountId": {
         "collection": "accounts",
@@ -98,7 +97,8 @@
             "_id": "ObjectId",
             "title": "String",
             "color": "String",
-            "iconfs": "String"
+            "iconfs": "String",
+            "action_name": "String"
         }
     },
     "Enterprises": {
@@ -112,6 +112,30 @@
             "ville": "String",
             "siret": "String",
             "codeNAF": "String"
+        }
+    },
+    "RegistreUniqueDuPersonnel": {
+        "collection": "registre_unique_personnel",
+        "schema": {
+            "_id": "ObjectId",
+            "nom": "String",
+            "prenom": "String",
+            "adresse": "String",
+            "Num_SS": "String",
+            "nationalite": "String",
+            "date_naissance": "String",
+            "sexe": "String",
+            "emploi_qualification": "String",
+            "date_entree": "Date",
+            "date_sortie": "Date",
+            "trav_etranger_titre":"String",
+            "trav_etranger_num_ordre": "String",
+            "jeune_trav_apprentissage": "String",
+            "jeune_trav_profess" : "String",
+            "trav_contrat_specif_CDD": "String",
+            "trav_contrat_specif_tps_partiel": "String",
+            "trav_contrat_specif_autre":"String",
+            "generer_fiche_form_habil_autor": "Boolean"
         }
     }
 }
