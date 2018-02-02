@@ -327,6 +327,33 @@
         "data_model": "RegistreUniqueDuPersonnel",
         "return_type": "application/json"
     },
+    "GET/nouveaupersonneloustagiaire": {
+        "module": "getview",
+        "methode": "view",
+        "screen": "fiche_saisie_registre_personnel",
+        "auth": true,
+        "params_names": []
+    },
+    "POST/addpersonnelstagiaire":{
+        "module": "inserter",
+        "methode": "one",
+        "screen": "form_registre_unique_personnel",
+        "auth": true,
+        "params_names": ["nom", "prenom", "adresse", "Num_SS", "nationalite", "sexe", "titre", "date_naissance", "emploi_qualification", "date_entree", "date_sortie", "trav_etranger_titre", "trav_etranger_num_ordre", "jeune_trav_apprentissage", "jeune_trav_profess", "trav_contrat_specif_CDD", "trav_contrat_specif_tps_partiel", "trav_contrat_specif_autre", "generer_fiche_form_habil_autor"],
+        "data_model": "RegistreUniqueDuPersonnel",
+        "redirect": true,
+        "redirect_action": "rh_registreuniquedupersonneletstagiaires"
+    },
+    "GET/deletepersonnelduregistreunique": {
+        "module": "deleter",
+        "methode": "oneById",
+        "screen": "form_registre_unique_personnel",
+        "auth": true,
+        "params_names": ["_id"],
+        "data_model": "RegistreUniqueDuPersonnel",
+        "redirect": true,
+        "redirect_action": "rh_registreuniquedupersonneletstagiaires"
+    },
     "GET/fiche_saisie_registre_personnel" : {
         "module": "finder",
         "methode": "one",
@@ -334,8 +361,52 @@
         "auth": true,
         "data_model": "RegistreUniqueDuPersonnel",
         "params_names": ["_id"]
+    },
+    "GET/suiviformationhabilitationsautorisations": {
+        "module": "finder",
+        "methode": "list",
+        "screen": "form_suivi_form_habil_autor",
+        "auth": true,
+        "data_model": "RegistreUniqueDuPersonnel"
+    },
+    "GET/json/suiviformationhabilitationsautorisations": {
+        "module": "finder",
+        "methode": "list",
+        "screen": "form_suivi_form_habil_autor",
+        "auth": true,
+        "data_model": "RegistreUniqueDuPersonnel",
+        "return_type": "application/json"
+    },
+    "GET/fiche_modif_suivi_form_hab_autor": {
+        "module": "finder",
+        "methode": "oneAndListMultiSchemas",
+        "screen": "fiche_modif_suivi_form_habil_autor",
+        "auth": true,
+        "data_model": "RegistreUniqueDuPersonnel",
+        "params_names": ["_id"],
+        "data_ref": ["TypeSuivi", "OrganismesFormations"]
+    },
+    "GET/json/listesuiviformationshabilitationautorisation": {
+        "module": "finder",
+        "methode": "populates",
+        "screen": "form_suivi_form_habil_autor",
+        "auth": true,
+        "data_model": "SuiviFormationHabilitationAutorisation",
+        "params_names": ["personnel_id"],
+        "data_ref": "personnel_id type_suivi organisme_formation",
+        "return_type": "application/json"
+    },
+    "POST/insertsuiviforonepersonnel": {
+        "module": "inserter",
+        "methode": "one",
+        "screen": "fiche_modif_suivi_form_habil_autor",
+        "auth": true,
+        "params_names": ["personnel_id", "type_suivi", "type", "date", "validite", "date_fin_validite", "organisme_formation", "redirect_id"],
+        "params_redirect": ["personnel_id"],
+        "data_model": "SuiviFormationHabilitationAutorisation",
+        "redirect": true,
+        "redirect_action": "fiche_modif_suivi_form_hab_autor"
     }
-
 }
 
                     
