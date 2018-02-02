@@ -281,18 +281,22 @@ function otfAction(req, res, next) {// attention il ne
                     logger.debug('Params sur redirect :' , controler.params);
                     
                     //Pour transférer les params au redirect screen avec les éventuels messages flash
-                    req.session.params = controler.params;
+                    if (controler.params['redirect_id']) {
+                        req.session.params._id = controler.params['redirect_id'];
+                    } else {
+                        req.session.params = controler.params;
+                        req.session.params = addFlashToResult(req.flash(), req.session.params);
+                    }
 
-                    req.session.params = addFlashToResult(req.flash(), req.session.params);
 
                     /** Todo add controler params for redirect action */
-                    var propertiesNames = Object.keys(controler.params);
+                    var propertiesNames = Object.keys(req.session.params);
                     logger.debug('PropertiesNames redirect :' , propertiesNames);
                     var params ="?";
 
                     for (var k=0;k<propertiesNames.length;k++) {
                         if ((propertiesNames[k] != 'password') && (propertiesNames[k] != 'passwd')) {
-                            params += propertiesNames[k] + '=' + controler.params[propertiesNames[k]] + '&';
+                            params += propertiesNames[k] + '=' + req.session.params[propertiesNames[k]] + '&';
                         }
                     }
                     logger.debug('redirect_action : ' + req.session.controler.redirect_action);
