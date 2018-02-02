@@ -362,7 +362,7 @@
         "data_model": "RegistreUniqueDuPersonnel",
         "params_names": ["_id"]
     },
-    "GET/suiviformationhabilitationsautorisations": {
+    "GET/doc_suiviformationhabilitationsautorisations": {
         "module": "finder",
         "methode": "list",
         "screen": "form_suivi_form_habil_autor",
