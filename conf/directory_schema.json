@@ -23,7 +23,11 @@
             "functionalities": [{
               "type": "ObjectId",
               "ref": "Functionalities"
-            }]
+            }],
+            "entreprise_id": {
+                "type": "ObjectId",
+                "ref": "Entreprise"
+            }
         }
     },
     "AccountId": {
@@ -101,8 +105,8 @@
             "action_name": "String"
         }
     },
-    "Enterprises": {
-        "collection": "enterprises",
+    "Entreprises": {
+        "collection": "entreprises",
         "schema": {
             "_id": "ObjectId",
             "raison_sociale": "String",
@@ -136,6 +140,58 @@
             "trav_contrat_specif_tps_partiel": "String",
             "trav_contrat_specif_autre":"String",
             "generer_fiche_form_habil_autor": "Boolean"
+        }
+    },
+    "TypeSuivi": {
+        "collection": "type_suivi",
+        "schema": {
+            "_id": "ObjectId",
+            "libelle": "String"
+        }
+    },
+    "ListeFormations": {
+        "collection": "liste_formations",
+        "schema": {
+            "_id": "ObjectId",
+            "libelle": "String"
+        }
+    },
+    "OrganismesFormations": {
+        "collection": "organismes_formations",
+        "schema": {
+            "_id": "ObjectId",
+            "raison_sociale" : "String",
+            "adresse1": "String",
+            "adresse2": "String",
+            "code_postal": "String",
+            "ville": "String",
+            "email": "String",
+            "liste_formations": [{
+                "type": "ObjectId",
+                "ref": "ListeFormations"
+            }]
+        }
+    },
+    "SuiviFormationHabilitationAutorisation": {
+        "collection": "suivi_form_habil_autor",
+        "schema": {
+            "_id": "ObjectId",
+            "personnel_id": {
+                "type": "ObjectId",
+                "ref": "RegistreUniqueDuPersonnel"
+            },
+            "type_suivi": {
+                "type": "ObjectId",
+                "ref": "TypeSuivi"
+            },
+            "type": "String",
+            "date": "String",
+            "validite": "String",
+            "date_fin_validite": "String",
+            "organisme_formation": {
+                "type": "ObjectId",
+                "ref" : "OrganismesFormations"
+            }
         }
     }
 }
