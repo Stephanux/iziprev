@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="col-sm-2">
                                     <div class="input-group">
-                                        <select class="form-control" id="titre" name="titre" required="required">
+                                        <select class="form-control" id="sexe" name="sexe" required="required">
                                             <option value="H" {{#if result}}{{#compare result.sexe 'H' operator='=='}}selected{{/compare}}{{/if}}>Homme</option>
                                             <option value="F" {{#if result}}{{#compare result.sexe 'F' operator='=='}}selected{{/compare}}{{/if}}>Femme</option>
                                         </select>
@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="col-sm-2">
                                     <div class="input-group date" data-provide="datepicker">
-                                        <input id="date_sortie" type="text" class="datepicker form-control" placeholder="Date sortie" name="date_sortie"  value="{{#if result}}{{result.date_sortie}}{{/if}}" title="Ce champs est requis" required="required">
+                                        <input id="date_sortie" type="text" class="datepicker form-control" placeholder="Date sortie" name="date_sortie"  value="{{#if result}}{{result.date_sortie}}{{/if}}" title="Date de sortie de l'entreprise">
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-th"></span>
                                         </div>
@@ -129,13 +129,13 @@
                                     <input id="trav_contrat_specif_tps_partiel" class="form-control" type="text" placeholder="Trav. contrat spécif. temps partiel" name="trav_contrat_specif_tps_partiel" value="{{#if result}}{{result.trav_contrat_specif_tps_partiel}}{{/if}}" title="Trav. contrat spécif. temps partiel" required="required"/>
                                 </div>
                                 <div class="col-sm-3">
-                                    <input id="jeune_trav_profess" class="form-control" type="text" placeholder="Jeune Trav. profession" name="jeune_trav_profess" value="{{#if result}}{{result.trav_contrat_specif_autre}}{{/if}}" title="Trav. contrat spécif. autre" required="required"/>
+                                    <input id="jeune_trav_profess" class="form-control" type="text" placeholder="Trav. Contrat Specif Autre" name="trav_contrat_specif_autre" value="{{#if result}}{{result.trav_contrat_specif_autre}}{{/if}}" title="Trav. contrat spécif. autre" required="required"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Générer fiche formation / habilitation / autorisation</label>
                                 <div class="col-sm-3">
-                                    <input id="trav_contrat_specif_CDD" class="checkbox" placeholder="Trav. contrat spécif.CDD" type="checkbox" name="trav_contrat_specif_CDD" title="Trav. contrat spécif.CDD" value="{{#if result}}{{result.trav_contrat_specif_CDD}}{{/if}}" required="required"/>
+                                    <input id="trav_contrat_specif_CDD" class="checkbox" placeholder="Trav. contrat spécif.CDD" type="checkbox" name="generer_fiche_form_habil_autor" title="Trav. contrat spécif.CDD" {{#if result.trav_contrat_specif_CDD}}checked{{/if}} required="required"/>
                                 </div>
 
                             </div>
@@ -144,7 +144,7 @@
                                     {{#if result}}
                                         <input type="hidden" name="_id" value="{{result._id}}"/>
                                     {{/if}}
-                                    <button type="submit" name="button" id="button" class="btn btn-primary">Mettre à jour les données</button>
+                                    <button type="submit" name="button" id="button" class="btn btn-primary">{{#if result}}Mettre à jour{{else}}Enregistrer{{/if}} les données</button>
                                 </div>
                             </div>
                             <div class="form-group">
