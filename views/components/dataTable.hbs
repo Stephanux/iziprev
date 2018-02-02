@@ -1,7 +1,7 @@
 <script>
     //<![CDATA[
     $(document).ready(function() {
-        populateGenericDatatable("{{this.urlJson}}", "table_datas", "_id", {{this.nbLines}}, [], {buttons: [{edit_btn:{{this.isEditBtn}}, name:"{{this.urlEditBtn}}", id_name:"{{this.idEditBtn}}"},{remove_btn:{{this.isDelBtn}}, name:"{{this.urlDelBtn}}", id_name:"{{this.idDelBtn}}"}]});
+        populateGenericDatatable("{{this.urlJson}}?personnel_id={{this.param}}", "table_datas", "_id", {{this.nbLines}}, [], {buttons: [{edit_btn:{{this.isEditBtn}}, name:"{{this.urlEditBtn}}", id_name:"{{this.idEditBtn}}"},{remove_btn:{{this.isDelBtn}}, name:"{{this.urlDelBtn}}", id_name:"{{this.idDelBtn}}"}]});
     });
     //]]>
 </script>
