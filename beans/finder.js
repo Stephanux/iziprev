@@ -138,9 +138,11 @@ exports.finder = {
             var model = GLOBAL.schemas[_controler.data_model];
             model.getDocument(_controler.params, function (err, one_user) {
                 logger.debug('Utilisateurs :', one_user);
-                result.one= one_user;
-                result.one.role = result.one.role.toString();
-                result.one.str = JSON.stringify(one_user);
+                if (one_user != null) {
+                    result.one= one_user;
+                    //result.one.role = result.one.role.toString();
+                    result.one.str = JSON.stringify(one_user);
+                }
                 try {
                     var listSchemas = _controler.data_ref;
                         
