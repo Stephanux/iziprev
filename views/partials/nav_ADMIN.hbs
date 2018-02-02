@@ -189,45 +189,53 @@
 
                     </ul>
                 </li>
-                <li class="treeview">
-                    <a href="/registresecuincendie">
-                        <i class="fa fa-fire-extinguisher"></i> <span>{{translation.REGISTRE_SECU_INCENDIE_MENU}}</span>
+                <li class="treeview {{#compare url 'hscti_' operator='indexof'}}active{{/compare}}">
+                    <a href="#">
+                        <i class="fa fa-users"></i> <span>{{translation.HST_INCENDIE_MENU}}</span><i class="fa fa-angle-left pull-right"></i>
                     </a>
-                </li>
-                <li class="treeview {{#compare url 'docunicevalriskpro' operator='indexof'}}active{{/compare}}">
-                    <a href="/docunicevalriskpro">
-                        <i class="fa fa-medkit"></i> <span>{{translation.DOC_UNIC_EVAL_RISK_PRO}}</span>
-                    </a>
-                </li>
-                <li class="treeview {{#compare url 'registreverification' operator='indexof'}}active{{/compare}}">
-                    <a href="/registreverication">
-                        <i class="fa fa-check-square"></i> <span>{{translation.REGISTRE_VERIFICATION_MENU}}</span>
-                    </a>
-                </li>
-                <li class="treeview {{#compare url 'travauxrealises' operator='indexof'}}active{{/compare}}">
-                    <a href="/travauxrealises">
-                        <i class="fa fa-wrench"></i> <span>{{translation.TRAVAUX_REALISES_MENU_1}}<br/>{{translation.TRAVAUX_REALISES_MENU_2}}</span>
-                    </a>
-                </li>
-                <li class="treeview {{#compare url 'dispositionproduitschimique' operator='indexof'}}active{{/compare}}">
-                    <a href="/dispositionproduitschimique">
-                        <i class="fa fa-exclamation-triangle"></i> <span>{{translation.DISPOSITION_PRODUITS_CHIMIQUES_MENU_1}}<br/>{{translation.DISPOSITION_PRODUITS_CHIMIQUES_MENU_2}}<br/>{{translation.DISPOSITION_PRODUITS_CHIMIQUES_MENU_3}}</span>
-                    </a>
-                </li>
-                <li class="treeview {{#compare url 'organistationdynamique' operator='indexof'}}active{{/compare}}">
-                    <a href="/organistationdynamique">
-                        <i class="fa fa-exclamation-circle"></i> <span>{{translation.ORGANISATION_DYNAMIQUE_MENU_1}}<br/>{{translation.ORGANISATION_DYNAMIQUE_MENU_2}}<br/>{{translation.ORGANISATION_DYNAMIQUE_MENU_3}}</span>
-                    </a>
-                </li>
-                <li class="treeview {{#compare url 'statspourcertification' operator='indexof'}}active{{/compare}}">
-                    <a href="/statspourcertification">
-                        <i class="fa fa-pie-chart"></i> <span>{{translation.STATS_POUR_CERTIFICATION_MENU}}</span>
-                    </a>
-                </li>
-                <li class="treeview {{#compare url 'organismeformation' operator='indexof'}}active{{/compare}}">
-                    <a href="/organismeformation">
-                        <i class="fa fa-hand-o-right"></i> <span>{{translation.ORGANISMES_FORMATIONS_MENU}}</span>
-                    </a>
+                    <ul class="treeview-menu">
+                        <li class="{{#compare url 'hscti_registresecuincendie' operator='=='}}active{{/compare}}">
+                            <a href="/hscti_registresecuincendie">
+                                <i class="fa fa-fire-extinguisher"></i>
+                                <span>{{translation.REGISTRE_SECU_INCENDIE_MENU}}</span>
+                            </a>
+                        </li>
+                        <li class="{{#compare url 'hscti_docunicevalriskpro' operator='indexof'}}active{{/compare}}">
+                            <a href="/hscti_docunicevalriskpro">
+                                <i class="fa fa-medkit"></i> <span>{{translation.DOC_UNIC_EVAL_RISK_PRO}}</span>
+                            </a>
+                        </li>
+                        <li class="{{#compare url 'hscti_registreverification' operator='indexof'}}active{{/compare}}">
+                            <a href="/hscti_registreverication">
+                                <i class="fa fa-check-square"></i> <span>{{translation.REGISTRE_VERIFICATION_MENU}}</span>
+                            </a>
+                        </li>
+                        <li class="{{#compare url 'hscti_travauxrealises' operator='indexof'}}active{{/compare}}">
+                            <a href="/hscti_travauxrealises">
+                                <i class="fa fa-wrench"></i> <span>{{translation.TRAVAUX_REALISES_MENU_1}}<br/>{{translation.TRAVAUX_REALISES_MENU_2}}</span>
+                            </a>
+                        </li>
+                        <li class="{{#compare url 'hscti_dispositionproduitschimique' operator='indexof'}}active{{/compare}}">
+                            <a href="/hscti_dispositionproduitschimique">
+                                <i class="fa fa-exclamation-triangle"></i> <span>{{translation.DISPOSITION_PRODUITS_CHIMIQUES_MENU_1}}<br/>{{translation.DISPOSITION_PRODUITS_CHIMIQUES_MENU_2}}<br/>{{translation.DISPOSITION_PRODUITS_CHIMIQUES_MENU_3}}</span>
+                            </a>
+                        </li>
+                        <li class="{{#compare url 'hscti_organistationdynamique' operator='indexof'}}active{{/compare}}">
+                            <a href="/hscti_organistationdynamique">
+                                <i class="fa fa-exclamation-circle"></i> <span>{{translation.ORGANISATION_DYNAMIQUE_MENU_1}}<br/>{{translation.ORGANISATION_DYNAMIQUE_MENU_2}}<br/>{{translation.ORGANISATION_DYNAMIQUE_MENU_3}}</span>
+                            </a>
+                        </li>
+                        <li class="{{#compare url 'hscti_statspourcertification' operator='indexof'}}active{{/compare}}">
+                            <a href="/hscti_statspourcertification">
+                                <i class="fa fa-pie-chart"></i> <span>{{translation.STATS_POUR_CERTIFICATION_MENU}}</span>
+                            </a>
+                        </li>
+                        <li class="{{#compare url 'hscti_organismeformation' operator='indexof'}}active{{/compare}}">
+                            <a href="/hscti_organismeformation">
+                                <i class="fa fa-hand-o-right"></i> <span>{{translation.ORGANISMES_FORMATIONS_MENU}}</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="treeview {{#compare url 'doc_' operator='indexof'}}active{{/compare}}">
                     <a href="#">
