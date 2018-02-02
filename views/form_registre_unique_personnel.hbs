@@ -34,12 +34,11 @@
 
             <div class="row">
                 <div class="col-md-12">
-
                     <!-- About Me Box -->
                     <div class="box box-primary">
                         <div class="box-header">
                             <h3 class="box-title">Liste du personnel et stagiaires</h3>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                            <button class="btn-primary">Saisie nouveau personnel ou stagiaire</button>
+                            <a href="/nouveaupersonneloustagiaire" ><button class="btn btn-primary">Saisie nouveau personnel ou stagiaire</button></a>
                         </div><!-- /.box-header -->
                         <div class="box-body">
                             {{renderComponent 'dataTable'
@@ -49,12 +48,12 @@
                                               urlEditBtn="/fiche_saisie_registre_personnel"
                                               idEditBtn="_id"
                                               isDelBtn=true
-                                              urlDelBtn="/deleteuser"
+                                              urlDelBtn="/deletepersonnelduregistreunique"
                                               idDelBtn="_id"
                                               values='["nom", "prenom", "adresse", "Num_SS", "nationalite", "date_naissance", "sexe", "emploi_qualification"]'
                             }}
                         </div><!-- /.box-body -->
-                    </div><!-- /.box -->
+                    </div>
                 </div><!-- /.col -->
 
             </div><!-- /.row -->
