@@ -90,3 +90,7 @@ author: Huile de Code @2014-2015
     top: 25px;
     width: 16px;
 }
+.main-sidebar, .left-side {
+    width: 240px;
+}
+
