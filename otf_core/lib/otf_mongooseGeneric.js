@@ -130,6 +130,18 @@ mongooseGeneric.prototype.popDocuments = function (_condition, _callback) {
     });
 };
 
+mongooseGeneric.prototype.popDocsFromTwo = function (_condition, _callback) {
+
+    this.document.find(_condition.query).populate(_condition.ref[0]).populate(_condition.ref[1]).exec(function (err, result) {
+        if (err) {
+            _callback(err, null);
+        }
+        else {
+            _callback(null, result);
+        }
+    });
+};
+
 mongooseGeneric.prototype.getPaginateDocuments = function (_condition, _callback) {
 
     this.document.findPaginated(_condition.query, function (err, result) {
