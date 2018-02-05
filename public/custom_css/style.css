@@ -93,4 +93,6 @@ author: Huile de Code @2014-2015
 .main-sidebar, .left-side {
     width: 240px;
 }
-
+.content-wrapper, .right-side, .main-footer {
+    margin-left: 242px;
+}
