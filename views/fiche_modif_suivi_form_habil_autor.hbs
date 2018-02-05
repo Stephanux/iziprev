@@ -15,10 +15,11 @@
         });
         function calcValidity() {
             var date = document.getElementById('date').value;
+            var TheDate  = new Date(date).toISOString();
             moment.locale('fr');
-            var dateDebut = moment(date).utc(true);
+            var dateDebut = moment(TheDate).utc(true);
             var duree = parseInt(document.getElementById('validite').value);
-            var dateFin = moment(dateDebut).utc(true).add(duree+1, 'M');
+            var dateFin = moment(dateDebut).utc(true).add(duree, 'M');
             document.getElementById('date_fin_validite').value = dateFin.format("L");
         }
     </script>
