@@ -12,8 +12,14 @@
             $('.datepicker').datepicker({
                 language: 'fr'
             });
-
         });
+        function calcValidity(elem) {
+            var date = document.getElementById('date');
+            var dateDebut = moment(date);
+            var duree = document.getElementById('validite').value;
+            var dateFin = dateDebut.add(duree, "months");
+            elem.value = dateFin.format("DD/MM/YYYY");
+        }
     </script>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -76,7 +82,7 @@
                                     <input id="validite" type="text" class="form-control" placeholder="Validité" name="validite"  value="" title="Validité" required="required">
                                 </div>
                                 <div class="col-sm-1">
-                                    <input id="date_fin_validite" type="text" class="form-control" placeholder="Date fin validité" name="date_fin_validite"  value="" title="Date fin validité" required="required">
+                                    <input id="date_fin_validite" type="text" class="form-control" placeholder="Date fin validité" name="date_fin_validite"  value="" title="Date fin validité" required="required" onfocus="calcValidity(this);">
                                 </div>
                                 <div class="col-sm-2">
                                     <select class="form-control" id="organisme_formation" name="organisme_formation" title="Choisir un organisme de formation" required="required">
