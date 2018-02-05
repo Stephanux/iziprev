@@ -26,7 +26,7 @@
             }],
             "entreprise_id": {
                 "type": "ObjectId",
-                "ref": "Entreprise"
+                "ref": "Entreprises"
             }
         }
     },
@@ -139,7 +139,11 @@
             "trav_contrat_specif_CDD": "String",
             "trav_contrat_specif_tps_partiel": "String",
             "trav_contrat_specif_autre":"String",
-            "generer_fiche_form_habil_autor": "Boolean"
+            "generer_fiche_form_habil_autor": "Boolean",
+            "entreprise_id": {
+                "type": "ObjectId",
+                "ref": "Entreprises"
+            }
         }
     },
     "TypeSuivi": {
