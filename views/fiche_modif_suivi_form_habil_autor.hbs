@@ -13,12 +13,13 @@
                 language: 'fr'
             });
         });
-        function calcValidity(elem) {
-            var date = document.getElementById('date');
-            var dateDebut = moment(date);
-            var duree = document.getElementById('validite').value;
-            var dateFin = dateDebut.add(duree, "months");
-            elem.value = dateFin.format("DD/MM/YYYY");
+        function calcValidity() {
+            var date = document.getElementById('date').value;
+            moment.locale('fr');
+            var dateDebut = moment(date).utc(true);
+            var duree = parseInt(document.getElementById('validite').value);
+            var dateFin = moment(dateDebut).utc(true).add(duree+1, 'M');
+            document.getElementById('date_fin_validite').value = dateFin.format("L");
         }
     </script>
     <!-- Content Wrapper. Contains page content -->
@@ -79,10 +80,10 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-1">
-                                    <input id="validite" type="text" class="form-control" placeholder="Validité" name="validite"  value="" title="Validité" required="required">
+                                    <input id="validite" type="text" class="form-control" placeholder="Validité" name="validite"  value="" title="Validité" required="required" onblur="calcValidity();">
                                 </div>
                                 <div class="col-sm-1">
-                                    <input id="date_fin_validite" type="text" class="form-control" placeholder="Date fin validité" name="date_fin_validite"  value="" title="Date fin validité" required="required" onfocus="calcValidity(this);">
+                                    <input id="date_fin_validite" type="text" class="form-control" placeholder="Date fin validité" name="date_fin_validite"  value="" title="Date fin validité" required="required" onfocus="calcValidity();">
                                 </div>
                                 <div class="col-sm-2">
                                     <select class="form-control" id="organisme_formation" name="organisme_formation" title="Choisir un organisme de formation" required="required">
