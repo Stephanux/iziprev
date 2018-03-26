@@ -197,5 +197,155 @@
                 "ref" : "OrganismesFormations"
             }
         }
+    },
+    "RegistreSecuriteIncendie": {
+        "collection": "registre_scurite_incendie",
+        "schema": {
+            "_id": "ObjectId",
+            "date_creation": "Date",
+            "auteur_id": {
+                "type": "ObjectId",
+                "ref": "RegistreUniqueDuPersonnel"
+            },
+            "entreprise_id": {
+                "type": "ObjectId",
+                "ref": "Entreprises"
+            },
+            "maj_par": [
+                {
+                    "type": "ObjectId",
+                    "ref": "RegistreUniqueDuPersonnel"
+                }
+            ],
+            "maj_date": "Date",
+            "maj_visa": "String",
+            "num_tel_utiles": {
+                "pompiers": "String",
+                "police_gendarmerie": "String",
+                "samu_smur": "String",
+                "ambulance": "String",
+                "medecin": "String",
+                "hôpital": "String",
+                "centre_anti_poisons": "String",
+                "electricte": {
+                    "urgence_jour": "String",
+                    "urgence_nuit": "String",
+                    "renseignement": "String"
+                },
+                "gaz": {
+                    "urgence_jour": "String",
+                    "urgence_nuit": "String",
+                    "renseignement": "String"
+                },
+                "service_des_eaux": {
+                    "urgence_jour": "String",
+                    "urgence_nuit": "String",
+                    "renseignement": "String"
+                },
+                "mairie": {
+                    "tél": "String",
+                    "adresse": "String"
+                },
+                "prefecture": {
+                    "tél": "String",
+                    "adresse": "String"
+                },
+                "inspection_travail": {
+                    "tél": "String",
+                    "adresse": "String"
+                },
+                "inspection_installations_classées": {
+                    "tél": "String",
+                    "adresse": "String"
+                },
+                "installateurs": {
+                    "eau": {
+                        "tel": "String",
+                        "adresse": "String"
+                    },
+                    "gaz": {
+                        "tel": "String",
+                        "adresse": "String"
+                    },
+                    "electricite": {
+                        "tel": "String",
+                        "adresse": "String"
+                    },
+                    "chauffage": {
+                        "tel": "String",
+                        "adresse": "String"
+                    },
+                    "telephone": {
+                        "tel": "String",
+                        "adresse": "String"
+                    },
+                    "ascenseurs": {
+                        "tel": "String",
+                        "adresse": "String"
+                    },
+                    "cuisine": {
+                        "tel": "String",
+                        "adresse": "String"
+                    }
+                },
+                "verificateurs_agrees": {
+                    "installation_electrique": {
+                        "tel": "String",
+                        "adresse": "String"
+                    },
+                    "installation_gaz": {
+                        "tel": "String",
+                        "adresse": "String"
+                    },
+                    "installation_desenfumage": {
+                        "tel": "String",
+                        "adresse": "String"
+                    },
+                    "installation_ascenseur": {
+                        "tel": "String",
+                        "adresse": "String"
+                    },
+                    "installation_cuisson": {
+                        "tel": "String",
+                        "adresse": "String"
+                    }
+                }
+            },
+            "suivi_incidents": [{
+                "type": "ObjectId",
+                "ref": "SuiviIncidents"
+            }]
+        }
+    },
+    "SuiviIncidents": {
+        "collection": "suiviincidents",
+        "schema": {
+            "_id": "ObjectId",
+            "date_incident": "Date",
+            "nature_incident": "String",
+            "mesures_prises_immediatement": "String",
+            "suite_donnees": "String",
+            "auteur_suivi": {
+                "type": "ObjectId",
+                "ref": "RegistreUniqueDuPersonnel"
+            },
+            "visa": "Buffer"
+        }
+    },
+    "Etablissements": {
+        "collection": "etablissements",
+        "schema": {
+            "_id": "ObjectId",
+            "raison_sociale": "String",
+            "tel": "String",
+            "adresse1": "String",
+            "adresse2": "String",
+            "code_postal": "String",
+            "ville": "String",
+            "representant_legal": {
+                "type": "ObjectId",
+                "ref": "RegistreUniqueDuPersonnel"
+            }
+        }
     }
 }
