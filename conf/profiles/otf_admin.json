@@ -416,6 +416,22 @@
         "params_names": ["personnel_id"],
         "data_ref": "personnel_id type_suivi organisme_formation",
         "return_type": "application/json"
+    },
+    "GET/administration_database": {
+        "module": "files",
+        "methode": "read",
+        "screen": "schema_database",
+        "auth": true,
+        "data_model": "public",
+        "params_names": ["name"]
+    },
+    "POST/saveSchemaDatabase": {
+        "module": "files",
+        "methode": "write",
+        "screen": "schema_database",
+        "auth": true,
+        "data_model": "public",
+        "params_names": ["name", "content"]
     }
 }
 
