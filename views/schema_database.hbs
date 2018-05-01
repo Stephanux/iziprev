@@ -532,7 +532,7 @@
                     /** todo : ici poster la chaîne XML du modèle de données pour le sauvgarder sur le serveur */
                     $.post( "/saveSchemaDatabase",  { name: "schema_database.xml", content: schemaXML }, function( data ) {
                         // ici on a le retour de l'action d'enregistrer les données sur le serveur.
-                        showModalWindow("Fichier "+ data.name + "Enregistré", null, 410, 440);
+                        alert("Fichier modèle schema_database.xml Enregistré");
                     });
                 });
 
