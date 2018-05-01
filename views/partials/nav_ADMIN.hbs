@@ -262,6 +262,7 @@
                         <i class="fa fa-cogs"></i> <span>{{translation.ADMIN_TECHNIC_MENU}}</span><i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
+                        <li class="{{#compare url '/administration_database' operator='indexof'}}active{{/compare}}"><a href="javascript:window.open('/administration_database?name=schema_database.xml')"><i class="fa fa-circle-o"></i>Schéma Base MongoDB</a></li>
                         <li class="{{#compare url '/administration_glances' operator='indexof'}}active{{/compare}}"><a href="/administration_glances"><i class="fa fa-circle-o"></i> Monit'IZIPREV</a></li>
                         <li class="{{#compare url '/administration_logs' operator='indexof'}}active{{/compare}}"><a href="/administration_logs"><i class="fa fa-circle-o"></i> Logs</a></li>
                         <li class="{{#compare url '/administration_list_annuaires' operator='indexof'}}active{{/compare}}"><a href="/administration_list_annuaires"><i class="fa fa-circle-o"></i> Annuaires</a></li>
