@@ -440,10 +440,11 @@
                     showModalWindow('Import XML', textarea, 410, 440);
                 });
 
+				addToolbarButton(editor, toolbar, 'export', 'Export XML', 'images/export1.png');
+                addToolbarButton(editor, toolbar, 'openFile', 'Import XML', 'images/import.png');
+                addToolbarButton(editor, toolbar, 'exportSVG', 'Export SVG', 'images/export1.png');
 
-
-					/*function()
-                {
+                editor.addAction('exportSVG', function(editor, cell) {
                     var background = '#ffffff';
                     var scale = 1;
                     var border = 1;
@@ -502,15 +503,12 @@
                     textarea.style.height = '400px';
 
                     var svg = mxUtils.getXml(root);
-                    //new mxXmlRequest('/Echo', 'filename=export.svg&format=svg' + '&xml=' + xml).simulate(document, '_blank');
-					console.log('SVG : \n' + svg);
+                    // ici remplacer par un appel au serveur OTF pour sauvegarder le fichier au format SVG.
+                    //new mxXmlRequest('/exportSVGSchema', 'filename=export.svg&format=svg' + '&xml=' + xml).simulate(document, '_blank');
+                    console.log('SVG : \n' + svg);
                     textarea.value = mxUtils.getPrettyXml(svg);
                     showModalWindow('SVG', textarea, 410, 440);
-                });*/
-
-
-				addToolbarButton(editor, toolbar, 'export', 'Export XML', 'images/export1.png');
-                addToolbarButton(editor, toolbar, 'openFile', 'Import XML', 'images/import.png');
+                });
 				// Adds toolbar buttons into the status bar at the bottom
 				// of the window.
 				addToolbarButton(editor, status, 'collapseAll', 'Collapse All', 'images/navigate_minus.png', true);
