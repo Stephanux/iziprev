@@ -451,10 +451,23 @@
                     showModalWindow('Import XML', textarea, 410, 440);
                 });
 
-
-
-					/*function()
+				addToolbarButton(editor, toolbar, 'export', 'Export XML', 'mxgraph/images/export1.png');
+                addToolbarButton(editor, toolbar, 'openFile', 'Import XML', 'mxgraph/images/import.png');
+                addToolbarButton(editor, toolbar, 'saveXML', 'Save XML', 'mxgraph/images/export1.png');
+                editor.addAction('saveXML', function(editor, cell)
                 {
+                    var enc = new mxCodec(mxUtils.createXmlDocument());
+                    var node = enc.encode(editor.graph.getModel());
+                    var schemaXML = mxUtils.getPrettyXml(node);
+                    /** todo : ici poster la chaîne XML du modèle de données pour le sauvgarder sur le serveur */
+                    $.post( "/saveSchemaDatabase",  { name: "schema_database.xml", content: schemaXML }, function( data ) {
+                        // ici on a le retour de l'action d'enregistrer les données sur le serveur.
+                        alert("Fichier modèle schema_database.xml Enregistré");
+                    });
+                });
+                addToolbarButton(editor, toolbar, 'exportSVG', 'Export SVG', 'images/export1.png');
+
+                editor.addAction('exportSVG', function(editor, cell) {
                     var background = '#ffffff';
                     var scale = 1;
                     var border = 1;
@@ -465,7 +478,7 @@
                     // Prepares SVG document that holds the output
                     var svgDoc = mxUtils.createXmlDocument();
                     var root = (svgDoc.createElementNS != null) ?
-                        svgDoc.createElementNS(mxConstants.NS_SVG, 'svg') : svgDoc.createElement('svg');
+                            svgDoc.createElementNS(mxConstants.NS_SVG, 'svg') : svgDoc.createElement('svg');
 
                     if (background != null)
                     {
@@ -496,7 +509,7 @@
 
                     // Adds group for anti-aliasing via transform
                     var group = (svgDoc.createElementNS != null) ?
-                        svgDoc.createElementNS(mxConstants.NS_SVG, 'g') : svgDoc.createElement('g');
+                            svgDoc.createElementNS(mxConstants.NS_SVG, 'g') : svgDoc.createElement('g');
                     group.setAttribute('transform', 'translate(0.5,0.5)');
                     root.appendChild(group);
                     svgDoc.appendChild(root);
@@ -513,28 +526,12 @@
                     textarea.style.height = '400px';
 
                     var svg = mxUtils.getXml(root);
-                    //new mxXmlRequest('/Echo', 'filename=export.svg&format=svg' + '&xml=' + xml).simulate(document, '_blank');
-					console.log('SVG : \n' + svg);
-                    textarea.value = mxUtils.getPrettyXml(svg);
+                    // ici remplacer par un appel au serveur OTF pour sauvegarder le fichier au format SVG.
+                    //new mxXmlRequest('/exportSVGSchema', 'filename=export.svg&format=svg' + '&xml=' + xml).simulate(document, '_blank');
+                    console.log('SVG : \n' + svg);
+                    textarea.value = svg;
                     showModalWindow('SVG', textarea, 410, 440);
-                });*/
-
-
-				addToolbarButton(editor, toolbar, 'export', 'Export XML', 'mxgraph/images/export1.png');
-                addToolbarButton(editor, toolbar, 'openFile', 'Import XML', 'mxgraph/images/import.png');
-                addToolbarButton(editor, toolbar, 'saveXML', 'Save XML', 'mxgraph/images/export1.png');
-                editor.addAction('saveXML', function(editor, cell)
-                {
-                    var enc = new mxCodec(mxUtils.createXmlDocument());
-                    var node = enc.encode(editor.graph.getModel());
-                    var schemaXML = mxUtils.getPrettyXml(node);
-                    /** todo : ici poster la chaîne XML du modèle de données pour le sauvgarder sur le serveur */
-                    $.post( "/saveSchemaDatabase",  { name: "schema_database.xml", content: schemaXML }, function( data ) {
-                        // ici on a le retour de l'action d'enregistrer les données sur le serveur.
-                        alert("Fichier modèle schema_database.xml Enregistré");
-                    });
                 });
-
 
 				// Adds toolbar buttons into the status bar at the bottom
 				// of the window.
