@@ -56,8 +56,7 @@ module.exports = function (app) {
         },
         // -- Check auth account in DB
         function (req, login, password, done) {
-            logger.debug('OTF² Passport  login [%s], password: [%s], body [%s]',
-                login, password, req.body);
+            logger.debug('OTF² Passport  login [%s], password: [%s], body [%s]', login, password, req.body);
             var Accounts = GLOBAL.schemas['Accounts'];
             // asynchronous
             process.nextTick(function () {
