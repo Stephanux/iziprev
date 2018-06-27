@@ -198,10 +198,19 @@ function getControler(req, cb) {
         return cb(null, controler);
     } else if ((type === 'POST') && (typeof filter_acceptableFields != 'undefined')) {
         if (content_type.indexOf('multipart/form-data;') < 0) { // ce n'est pas du multipart ce POST
-            for (var field in req.body) {
-                if ((req.body.hasOwnProperty(field)) && (filter_acceptableFields.indexOf(field) >= 0)) {
-                    //filteredQuery[field] = new RegExp('^' + req.body[field] + '$', 'i');
-                    filteredQuery[field] = req.body[field];
+            if (!Array.isArray(filter_acceptableFields)) {
+                for (var field in req.body) {
+                    if ((req.body.hasOwnProperty(field)) && (filter_acceptableFields.indexOf(field) >= 0)) {
+                        //filteredQuery[field] = new RegExp('^' + req.body[field] + '$', 'i');
+                        filteredQuery[field] = req.body[field];
+                    }
+                }
+            } else {
+                for (var field in req.body) {
+                    if ((req.body.hasOwnProperty(field)) && (filter_acceptableFields.length >= 0)) {
+                        //filteredQuery[field] = new RegExp('^' + req.body[field] + '$', 'i');
+                        filteredQuery[field] = req.body[field];
+                    }
                 }
             }
         }
@@ -256,15 +265,15 @@ function otfAction(req, res, next) {// attention il ne
             //beans.params, beans.path, beans.data_model, beans.schema, beans.room
             controler.action(req, function (errBean, result) {
 				//manage cache behavior
-				if (req.session.controler.no_cache){
+                result.url = controler.path;  // pour corriger un bug ? pas d'url en variable globale dans handlebars pour menu-treeview
+                if (req.session.controler.no_cache){
 					//Disable cache to prevent back button showing previous pages after logout
 					logger.info("OTF² is configured to disable cache browser for this request");
 					res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
 					res.header('Expires', '-1');
 					res.header('Pragma', 'no-cache');
-				};
+				}
 								
-                result.url = controler.path;  // pour corriger un bug ? pas d'url en variable globale dans handlebars pour menu-treeview
                 var t1 = new Date().getMilliseconds();
                 // handling exception
                 //-- @TODO Faire une gestion des exceptions plus fine !!
