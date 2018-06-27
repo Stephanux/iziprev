@@ -48,12 +48,12 @@
 
                                 <div class="form-group">
                                     <label for="inputName" class="col-sm-2 control-label">Personnel permanent</label>
-                                    <input class="form-control" placeholder="libelle" type="hidden" name="Personnel-permanent" title="Ce champs est requis" value="{{#if result}}{{result.Effectif.categorie_salarie}}{{/if}}" required="required"/>
+                                    <input class="form-control" placeholder="libelle" type="hidden" name="categorie_salarie" title="Ce champs est requis" value="Personnel permanent" required="required"/>
                                     <div class="col-sm-1">
                                         <input class="form-control" placeholder="nombre" type="text" name="nbre" value="{{#if result}}{{result.Effectif.nbre}}{{/if}}" required="required" autofocus/>
                                     </div>
                                     <div class="col-sm-1">
-                                        <p>periode</p>
+                                        <p>A partir du</p>
                                     </div>
                                     <div class="col-sm-2">
                                         <input class="form-control" type="date" name="date_periode" value="{{#if result}}{{result.Effectif.date_periode}}{{/if}}"/>
@@ -62,7 +62,7 @@
 
                                 <div class="form-group">
                                     <label for="inputName" class="col-sm-2 control-label">Personnel saisonnier</label>
-                                    <input class="form-control" placeholder="libelle" type="hidden" name="Personnel-saisonnier" title="Ce champs est requis" value="{{#if result}}{{result.Effectif.categorie_salarie}}{{/if}}" required="required"/>
+                                    <input class="form-control" placeholder="libelle" type="hidden" name="categorie_salarie" title="Ce champs est requis" value="Personnel saisonnier" required="required"/>
                                     <div class="col-sm-1">
                                         <input class="form-control" placeholder="nombre" type="text" name="nbre" value="{{#if result}}{{result.Effectif.nbre}}{{/if}}" required="required" autofocus/>
                                     </div>
@@ -70,19 +70,19 @@
                                         <p>periode</p>
                                     </div>
                                     <div class="col-sm-2">
-                                        <input class="form-control" type="date" name="date_periode" value="{{#if result}}{{result.Effectif.date_periode}}{{/if}}"/>
+                                        <input class="form-control" type="date" name="date_debut" value="{{#if result}}{{result.Effectif.date_debut}}{{/if}}"/>
                                     </div>
                                     <div class="col-sm-1">
                                         <p>au</p>
                                     </div>
                                     <div class="col-sm-2">
-                                        <input class="form-control" type="date" name="date_periode" value="{{#if result}}{{result.Effectif.date_periode}}{{/if}}"/>
+                                        <input class="form-control" type="date" name="date_fin" value="{{#if result}}{{result.Effectif.date_fin}}{{/if}}"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputName" class="col-sm-2 control-label">Intervenant exterieur</label>
-                                    <input class="form-control" placeholder="libelle" type="hidden" name="intervenant-exterieur" title="Ce champs est requis" value="{{#if result}}{{result.Effectif.categorie_salarie}}{{/if}}" required="required"/>
+                                    <input class="form-control" placeholder="libelle" type="hidden" name="categorie_salarie" title="Ce champs est requis" value="Intervenant exterieur" required="required"/>
                                     <div class="col-sm-1">
                                         <input class="form-control" placeholder="nombre" type="text" name="nbre" value="{{#if result}}{{result.Effectif.nbre}}{{/if}}" required="required" autofocus/>
                                     </div>
@@ -90,33 +90,33 @@
                                         <p>periode</p>
                                     </div>
                                     <div class="col-sm-2">
-                                        <input class="form-control" type="date" name="date_periode" value="{{#if result}}{{result.Effectif.date_periode}}{{/if}}"/>
+                                        <input class="form-control" type="date" name="date_debut" value="{{#if result}}{{result.Effectif.date_debut}}{{/if}}"/>
                                     </div>
                                     <div class="col-sm-1">
                                         <p>au</p>
                                     </div>
                                     <div class="col-sm-2">
-                                        <input class="form-control" type="date" name="date_periode" value="{{#if result}}{{result.Effectif.date_periode}}{{/if}}"/>
+                                        <input class="form-control" type="date" name="date_fin" value="{{#if result}}{{result.Effectif.date_fin}}{{/if}}"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputName" class="col-sm-2 control-label">Public</label>
-                                    <input class="form-control" placeholder="libelle" type="hidden" name="public" title="Ce champs est requis" value="{{#if result}}{{result.Effectif.categorie_salarie}}{{/if}}" required="required"/>
+                                    <input class="form-control" placeholder="libelle" type="hidden" name="categorie_salarie" title="Ce champs est requis" value="Public" required="required"/>
                                     <div class="col-sm-1">
-                                        <input class="form-control" placeholder="nombre" type="text" name="nb" value="{{#if result}}{{result.Effectif.nbre}}{{/if}}" required="required" autofocus/>
+                                        <input class="form-control" placeholder="nombre" type="text" name="nbre" value="{{#if result}}{{result.Effectif.nbre}}{{/if}}" required="required" autofocus/>
                                     </div>
                                     <div class="col-sm-1">
                                         <p>periode</p>
                                     </div>
                                     <div class="col-sm-2">
-                                        <input class="form-control" type="date" name="date_periode" value="{{#if result}}{{result.Effectif.date_periode}}{{/if}}"/>
+                                        <input class="form-control" type="date" name="date_debut" value="{{#if result}}{{result.Effectif.date_debut}}{{/if}}"/>
                                     </div>
                                     <div class="col-sm-1">
                                         <p>au</p>
                                     </div>
                                     <div class="col-sm-2">
-                                        <input class="form-control" type="date" name="date_periode" value="{{#if result}}{{result.Effectif.date_periode}}{{/if}}"/>
+                                        <input class="form-control" type="date" name="date_fin" value="{{#if result}}{{result.Effectif.date_fin}}{{/if}}"/>
                                     </div>
                                 </div>
 

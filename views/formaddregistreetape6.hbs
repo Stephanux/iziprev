@@ -19,7 +19,55 @@
             //ajout d instruction
             var addButtoncons = $('.add_buttoncons'); //bouton ajouter
             var wrappercons = $('.field_wrappercons'); //Input field wrapper
-            var fieldHTMLcons = '<div class="col-xs-12 col-sm-12"><hr class="my-4"><div class="col-sm-2" style="text-align: right"><label for="inputName">Emplacement / type de consigne</label></div><div class="col-sm-5"><input class="form-control" placeholder="emplacement" type="text" name="emplconsigne[]" value="{{#if result}}{{result.Consignes.emplacement}}{{/if}}" required="required" autofocus/></div><div class="col-sm-5"><input class="form-control" placeholder="type" type="text" name="typeconsigne[]" value="{{#if result}}{{result.Consignes.type}}{{/if}}" required="required" autofocus/></div></div><div class="col-xs-12 col-sm-12"><div class="col-sm-2" style="text-align: right"><label for="inputName">Date</label></div><div class="col-sm-2"><input class="form-control" type="date" name="dateconsigne[]" value="{{#if result}}{{result.Consignes.date}}{{/if}}" required="required" autofocus/></div><div class="col-sm-4"><input class="form-control" placeholder="personne chargée de la consigne" type="text" name="chargconsigne[]" value="{{#if result}}{{result.Consignes.RegistreUniqueDuPersonnel_extId}}{{/if}}" required="required" autofocus/></div><div class="col-sm-4"><input class="form-control" placeholder="visa" type="text" name="visaconsigne[]" value="{{#if result}}{{result.Consignes.visa}}{{/if}}" required="required" autofocus/></div></div>'; //New input field html
+            var fieldHTMLcons = '<hr class="my-4"> <div class="col-xs-12 col-sm-12">\n' +
+                    '                                        <div class="col-sm-2" style="text-align: right">\n' +
+                    '                                            <label for="inputName">Libelle des consignes</label>\n' +
+                    '                                        </div>\n' +
+                    '                                        <div class="col-sm-10">\n' +
+                    '                                            <input class="form-control" placeholder="Consignes" type="text" name="libconsigne" value="{{#if
+                            result}}{{result.Consignes.libelle}}{{/if}}" required="required" autofocus/>\n' +
+                    '                                        </div>\n' +
+                    '                                    </div>\n' +
+                    '\n' +
+                    '\n' +
+                    '                                <div class="form-group">\n' +
+                    '                                    <div class="col-xs-12 col-sm-12 col-sm-offset-2">\n' +
+                    '                                        <label for="inputName">Affichage des consignes</label>\n' +
+                    '                                    </div>\n' +
+                    '\n' +
+                    '                                    <div class="col-xs-12 col-sm-12">\n' +
+                    '\n' +
+                    '                                        <div class="col-sm-2" style="text-align: right">\n' +
+                    '                                            <label for="inputName">Emplacement / type de consigne</label>\n' +
+                    '                                        </div>\n' +
+                    '                                        <div class="col-sm-5">\n' +
+                    '                                            <input class="form-control" placeholder="emplacement" type="text" name="emplconsigne[]" value="{{#if
+                            result}}{{result.Consignes.emplacement}}{{/if}}" required="required" autofocus/>\n' +
+                    '                                        </div>\n' +
+                    '                                        <div class="col-sm-5">\n' +
+                    '                                            <input class="form-control" placeholder="type" type="text" name="typeconsigne[]" value="{{#if
+                            result}}{{result.Consignes.type}}{{/if}}" required="required" autofocus/>\n' +
+                    '                                        </div>\n' +
+                    '                                    </div>\n' +
+                    '                                    <div class="col-xs-12 col-sm-12">\n' +
+                    '\n' +
+                    '                                        <div class="col-sm-2" style="text-align: right">\n' +
+                    '                                            <label for="inputName">Date</label>\n' +
+                    '                                        </div>\n' +
+                    '                                        <div class="col-sm-2">\n' +
+                    '                                            <input class="form-control" type="date" name="dateconsigne[]" value="{{#if
+                            result}}{{result.Consignes.date}}{{/if}}" required="required" autofocus/>\n' +
+                    '                                        </div>\n' +
+                    '                                        <div class="col-sm-4">\n' +
+                    '                                            <input class="form-control" placeholder="personne chargée de la consigne" type="text" name="chargconsigne[]" value="{{#if
+                            result}}{{result.Consignes.RegistreUniqueDuPersonnel_extId}}{{/if}}" required="required" autofocus/>\n' +
+                    '                                        </div>\n' +
+                    '                                        <div class="col-sm-4">\n' +
+                    '                                            <input class="form-control" placeholder="visa" type="text" name="visaconsigne[]" value="{{#if
+                            result}}{{result.Consignes.visa}}{{/if}}" required="required" autofocus/>\n' +
+                    '                                        </div>\n' +
+                    '                                    </div>\n' +
+                    '                                    </div>'; //New input field html
             $(addButtoncons).click(function () { //Once add button is clicked
                 if (x < maxField) { //Check maximum number of input fields
                     x++; //Increment field counter
@@ -69,6 +117,7 @@
                                                 l’établissement, l’accueil et le guidage des sapeurs pompiers... (Règlement de sécurité ERP – MS 47).</i></p>
                                         </div>
                                     </div>
+                                    <div class="field_wrappercons">
                                     <div class="col-xs-12 col-sm-12">
                                         <div class="col-sm-2" style="text-align: right">
                                             <label for="inputName">Libelle des consignes</label>
@@ -77,13 +126,13 @@
                                             <input class="form-control" placeholder="Consignes" type="text" name="libconsigne" value="{{#if result}}{{result.Consignes.libelle}}{{/if}}" required="required" autofocus/>
                                         </div>
                                     </div>
-                                </div>
+
 
                                 <div class="form-group">
                                     <div class="col-xs-12 col-sm-12 col-sm-offset-2">
                                         <label for="inputName">Affichage des consignes</label>
                                     </div>
-                                    <div class="field_wrappercons">
+
                                     <div class="col-xs-12 col-sm-12">
 
                                         <div class="col-sm-2" style="text-align: right">
