@@ -6,7 +6,7 @@ logger.setLevel(GLOBAL.config["LOGS"].level);
 var mongoose = require('mongoose');
 //var genericModel = require('../ressources/models/mongooseGeneric');
 var passport = require('passport');
-var logs = GLOBAL.schemas["Logs"];
+var logs = GLOBAL.schemas["LogsAccounts"];
 
 /*
  * SET users datas into MongoDB.
