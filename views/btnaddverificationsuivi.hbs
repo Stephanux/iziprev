@@ -1,0 +1,88 @@
+{{#content "head"}}
+    {{> head}}
+{{/content}}
+{{#content "nav"}}
+    {{> nav}}
+{{/content}}
+{{#content "page"}}
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Registre de sécutité incendie
+            </h1>
+            <br>
+            <h2 class="center-block">
+                Menu vérification et suivi RSI
+            </h2>
+            <h3>
+                Effectuer vos actions
+            </h3>
+            <ol class="breadcrumb">
+                <li><a href="/index"><i class="fa fa-home"></i> Accueil</a></li>
+                <li><a href="/hscti_registresecuincendie"><i class="fa fa-angle-left"></i> Menu Principal RSI</a></li>
+            </ol>
+        </section>
+
+        <!--section>
+          <img src="img/logo-otf-6-1_280px.png" class="img-responsive" alt="logo OTF²">
+        </section-->
+        <!-- Main content -->
+        <section class="content">
+            <!-- ================= widgets accueil ======================= -->
+            <!-- First row of dashboard -->
+
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <a href="/formaddverificationinstallations">
+                        <div class="info-box bg-red"
+                             onmouseover="activateBoxOver(this, 'red');"
+                             onmouseout="deactivateBoxOver(this, 'red');">
+                                    <span class="info-box-icon"><i class="fa fa-plus"
+                                                                   aria-hidden="true"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Ajout de vérification, d'entretien et d'essai des installations </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <a href="/formaddsuiviincident">
+                        <div class="info-box bg-red"
+                             onmouseover="activateBoxOver(this, 'red');"
+                             onmouseout="deactivateBoxOver(this, 'red');">
+                                    <span class="info-box-icon"><i class="fa fa-plus"
+                                                                   aria-hidden="true"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Ajout des suivis d'incidents</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <a href="/formaddvisite">
+                        <div class="info-box bg-red"
+                             onmouseover="activateBoxOver(this, 'red');"
+                             onmouseout="deactivateBoxOver(this, 'red');">
+                                    <span class="info-box-icon"><i class="fa fa-plus"
+                                                                   aria-hidden="true"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Ajout de visite de commission</span><br/>
+                                <p>Commision, inspection, ...</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+
+{{/content}}
+{{#content "footer"}}
+    {{> footer}}
+{{/content}}
