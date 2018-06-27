@@ -1,5 +1,5 @@
 // create connection
-var socket = io.connect('http://localhost:3001');
+var socket = io.connect('http://' + window.location.origin + ':3001');
 // Attente Ack after connection
 socket.on('ack', function(data) {
     console.log('WebSocket Client is connected \n Room is :' + data.sessionid + '\n User is :' + data.user);
