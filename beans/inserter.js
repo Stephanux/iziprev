@@ -27,7 +27,10 @@ exports.inserter = {
         //var modele = mongoose.model(model);
         // Test Emit WebSocket Event
         logger.debug(" One User emmit call");
-        sio.sockets.in(_controler.room).emit('user', {room: _controler.room, comment: ' One User\n\t Your Filter is :'});
+        sio.sockets.in(_controler.room).emit('user', {
+            room: _controler.room,
+            comment: ' One User\n\t Your Filter is :'
+        });
         try {
             model.createDocument(_controler.params, function (err, nb_inserted) {
                 logger.debug('nombre documents insérés :', nb_inserted);
@@ -52,7 +55,8 @@ exports.inserter = {
         //var modele = mongoose.model(model);
         // Test Emit WebSocket Event
         var dataArray = _controler.params;
-        var nbInserted =null;
+        var nbInserted = null;
+
         function insertArray(i, cbk) {
             logger.debug(" List inserter call");
             //sio.sockets.in(_controler.room).emit('user', {room: _controler.room, comment: ' One User\n\t Your Filter is :'});
@@ -61,7 +65,7 @@ exports.inserter = {
                     model.createDocument(dataArray[i], function (err, nb_inserted) {
                         nbInserted = nb_inserted;
                         logger.debug("objet inséré via inserter.list : ", dataArray[i]);
-                        insertArray(i+1, cbk);
+                        insertArray(i + 1, cbk);
                     });
                 } else {
                     cbk();
@@ -78,4 +82,5 @@ exports.inserter = {
         });
 
     }
-};
+
+}
