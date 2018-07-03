@@ -1,0 +1,11 @@
+alreadyConnected=Neuds déjà connectés
+containsValidationErrors=Contient des erreurs de validation
+updatingDocument=Mise à jour Document. Patientez svp...
+updatingSelection=Mise à jour Selection. Patientez svp...
+collapse-expand=Refermer/Etendre
+doubleClickOrientation=Doublic click pour changer d'orientation
+close=Fermer
+error=Erreur
+done=Fait
+cancel=Annuler
+ok=Valider
