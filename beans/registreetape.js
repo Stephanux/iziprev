@@ -145,11 +145,12 @@ registreEffectif: function (req, cb) {
     var categorie = dataArray["categorie_salarie"].length;
     for (var k = 0; k < categorie; k++) {
         dataIntoArray.push({
+            "categorie_salarie" : dataArray["categorie_salarie"][k],
             "nbre": dataArray["nbre"][k],
             "annee": dataArray["annee"][k],
         });
     }
-    GLOBAL.schemas[model].createDocument(dataTableau, function (err, data_inserted) {
+    GLOBAL.schemas[model].createDocument(dataArray, function (err, data_inserted) {
 
         dataIntoArray.push(data_inserted._id);
         logger.debug("objet inséré via inserter.registreEtape : ", data_inserted);
