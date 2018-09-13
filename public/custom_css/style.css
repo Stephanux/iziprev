@@ -104,4 +104,9 @@ author: Huile de Code @2014-2015
     .h2 h2 {
         font-size: 19px;
     }
+
+    .h1, .h2, .h3, h1, h2, h3 {
+        margin-top: -9px;
+        margin-bottom: 10px;
+    }
 }
