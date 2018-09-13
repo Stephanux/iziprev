@@ -99,3 +99,9 @@ author: Huile de Code @2014-2015
         word-wrap: break-word;
     }
 }
+
+@media (max-width: 1025px) {
+    .h2 h2 {
+        font-size: 19px;
+    }
+}
