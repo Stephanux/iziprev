@@ -26,7 +26,7 @@ body {
     background-color: transparent;
 }
 
-.sidebar-menu>li.header {
+.skin-blue .sidebar-menu>li.header {
     color: #ffffff;
     background: #1a2226;
 }
