@@ -133,6 +133,13 @@
 
     <script src="javascripts/jquery.validate.min.js"></script>
 
+    <script>
+        $( document ).ready(function() {
+            if (document.body.clientWidth < 1025) {
+                $('body').addClass('sidebar-collapse');
+            }
+        });
+    </script>
     <!-- clonable -->
     <!--script src="javascripts/js/plugins/clonable/jquery.icietla.clonable.js"></script-->
     <!--script src="javascripts/fileinput.min.js"></script-->
