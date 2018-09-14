@@ -22,15 +22,6 @@ body {
     background-color: rgba(250,235,215,0);
 }
 
-.skin-blue .main-sidebar, .skin-blue .wrapper {
-    background-color: transparent;
-}
-
-.skin-blue .sidebar-menu>li.header {
-    color: #ffffff;
-    background: #1a2226;
-}
-
 .content-header > h1 {
     font-size: 40px;
 }
