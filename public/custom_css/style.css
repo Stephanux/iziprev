@@ -22,7 +22,7 @@ body {
     background-color: rgba(250,235,215,0);
 }
 
-.skin-blue .main-sidebar .wrapper {
+.skin-blue .main-sidebar, .skin-blue .wrapper {
     background-color: transparent;
 }
 
