@@ -18,6 +18,10 @@ body {
     background-color: rgba(250,235,215,0.7);
 }
 
+.login-box-body {
+    background-color: rgba(250,235,215,0.7);
+}
+
 .content-header > h1 {
     font-size: 40px;
 }
